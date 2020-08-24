@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AGNCronometro"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="AGN Cronómetro" Height="210" Width="400" MinWidth="160" MinHeight="210" MaxWidth="400" MaxHeight="210">
+    <Grid HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="CronometroLabel" Content="00:00:00" Margin="0" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <WrapPanel HorizontalAlignment="Center" Margin="10" VerticalAlignment="Center" Grid.Row="1">
+            <Button x:Name="StartButton" Content="Start" Width="100" Margin="10,0" FontSize="20" Click="StartButton_Click"/>
+            <Button x:Name="PauseButton" Content="Pause" Width="100" Margin="10,0" FontSize="20" Click="PauseButton_Click" IsEnabled="False"/>
+            <Button x:Name="StopButton" Content="Stop" Width="100" Margin="10,0" FontSize="20" Click="StopButton_Click" IsEnabled="False"/>
+        </WrapPanel>
     </Grid>
 </Window>

@@ -1,28 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AGNBack.Interfaces;
+using Services;
+using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace AGNCronometro
 {
-    /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        IChronometer _chronometer;
+
         public MainWindow()
         {
             InitializeComponent();
+            _chronometer = Chronometer.Create(UpdateChronometerLabel_Event); //injeccion de dependencia sin utilizar un framework
+        }
+
+        private void UpdateChronometerLabel_Event(object sender, EventArgs e)
+        {
+            _chronometer.IncrementElapsedTime();
+            CronometroLabel.Content = _chronometer.Value;
+        }
+
+        private void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+            _chronometer.Start();
+            SetIsEnabled(false, true, false);
+        }
+
+        private void PauseButton_Click(object sender, RoutedEventArgs e)
+        {
+            _chronometer.Pause();
+            SetIsEnabled(true, false, true);
+        }
+
+        private void StopButton_Click(object sender, RoutedEventArgs e)
+        {
+            _chronometer.Stop();
+            SetIsEnabled(true, false, false);
+        }
+
+        private void SetIsEnabled(bool start, bool pause, bool stop)
+        {
+            StartButton.IsEnabled = start;
+            PauseButton.IsEnabled = pause;
+            StopButton.IsEnabled = stop;
         }
     }
 }

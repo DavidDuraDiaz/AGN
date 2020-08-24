@@ -94,5 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Services\AGNBack.csproj">
+      <Project>{FBEB6A7E-553F-48A4-8B51-4A030ED103DE}</Project>
+      <Name>AGNBack</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

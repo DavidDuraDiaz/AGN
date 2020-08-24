@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGNCronometro", "AGNCronometro\AGNCronometro.csproj", "{84971BD3-8B00-420F-9201-D2BD5F9FFCBE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGNFront", "AGNCronometro\AGNFront.csproj", "{84971BD3-8B00-420F-9201-D2BD5F9FFCBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGNBack", "Services\AGNBack.csproj", "{FBEB6A7E-553F-48A4-8B51-4A030ED103DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{84971BD3-8B00-420F-9201-D2BD5F9FFCBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84971BD3-8B00-420F-9201-D2BD5F9FFCBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84971BD3-8B00-420F-9201-D2BD5F9FFCBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBEB6A7E-553F-48A4-8B51-4A030ED103DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBEB6A7E-553F-48A4-8B51-4A030ED103DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBEB6A7E-553F-48A4-8B51-4A030ED103DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBEB6A7E-553F-48A4-8B51-4A030ED103DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
